@@ -156,6 +156,16 @@ body {
 .page__main-block {
 }
 
+.page__services {
+  position: relative;
+  z-index: 2;
+  margin-top: -111px;
+  /* если необходимо поднять какие-то блоки поверх другого блока то используется отрицательный margin, при таком подходе поднимется равномерно весь нижний контент. Так-же использую  position: relative;
+  z-index: 2; чтоб  поместить необходимый контент поверх блока   */
+}
+
+/* --------------------------блок элементы класса---------------------------- */
+
 .main-block {
   position: relative;
 }
@@ -204,7 +214,7 @@ body {
 
 @media (max-width: 479px) {
   .main-block__text {
-    color: #211010
+    color: #211010;
   }
 }
 
@@ -212,7 +222,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin: -10px 0;
-  /* В общем, это означает то, что если элементы потомки не слишком велики, то два контейнера с display: inline-flex могут идти бок о бок в одной строке. */
+  /* display: inline-flex; В общем, это означает то, что если элементы потомки не слишком велики, то два контейнера с display: inline-flex могут идти бок о бок в одной строке. */
 }
 
 .main-block__button {
@@ -272,6 +282,92 @@ body {
     opacity: 0.3;
   }
 }
+
 /* ----------------------------блок main---------------------------- */
+
+.services {
+}
+.services__container {
+}
+
+
+@media (min-width: 670px) {
+  .services__body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px -15px -30px;
+  }
+}
+
+.services__column {
+  flex: 0 1 33.333%;
+  margin-top: 30px;
+  /* самый простой способ задать равные отступы внутри у блоков */
+}
+
+@media (min-width: 670px) {
+  .services__column {
+    padding: 0px 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .services__column {
+    flex: 0 1 50%;
+  }
+}
+
+@media (max-width: 992px) {
+  .services__column:last-child {
+    flex: 0 1 100%;
+  }
+}
+.services__item {
+  box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+  background-color: #ffffff;
+  padding: 35px;
+  height: 100%;
+  /* при добавлении контента карточки будут увеличиваться пропорционально при добавлении height: 100%;  */
+}
+.item-service {
+}
+
+.item-service > * {
+  margin-bottom: 10px;
+}
+
+.item-service__icon {
+}
+
+._green {
+  background-color: #0d5c63;
+}
+
+._green .item-service__title {
+  color: #ffffff;
+  /* изменить цвета текстов можно через добавление к модификатору необходимого div */
+}
+
+._green .item-service__text {
+  color: #ffffff;
+  /* изменить цвета текстов можно через добавление к модификатору необходимого div */
+}
+
+.item-service__title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: calc(32 / 24 * 100%);
+  letter-spacing: 0.1px;
+  color: #252b42;
+}
+.item-service__text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: calc(20 / 14 * 100%);
+  letter-spacing: 0.2px;
+  color: #737373;
+}
+
+/* ----------------------------блок services---------------------------- */
 
 /* ----------------------------блок footer---------------------------- */
