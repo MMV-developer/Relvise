@@ -151,9 +151,11 @@ body {
 
 .page {
   flex: 1 1 auto;
+  /* свойство display: flex; достаточно легко им управлять с помощью примера flex: 1 1 auto;  */
 }
 
 .page__main-block {
+  background: #fafafa;
 }
 
 .page__services {
@@ -162,6 +164,35 @@ body {
   margin-top: -111px;
   /* если необходимо поднять какие-то блоки поверх другого блока то используется отрицательный margin, при таком подходе поднимется равномерно весь нижний контент. Так-же использую  position: relative;
   z-index: 2; чтоб  поместить необходимый контент поверх блока   */
+}
+
+.page__advantages {
+  background: #fafafa;
+}
+
+.header-block {
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+
+.header-block__title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: calc(57 / 40 * 100%);
+  letter-spacing: 0.2px;
+  color: #252b42;
+}
+
+.header-block__title:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.header-block__sub-title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: calc(20 / 14 * 100%);
+  letter-spacing: 0.2px;
+  color: #737373;
 }
 
 /* --------------------------блок элементы класса---------------------------- */
@@ -188,6 +219,13 @@ body {
     padding: 120px 0px 192px 0px;
   }
 }
+
+@media (max-width: 479px) {
+  .main-block__body {
+    padding: 115px 0px 160px 0px;
+  }
+}
+
 .main-block__body > * {
   margin-bottom: 35px;
   /* интересная фишка чтоб сохранить все отступы даже если контент удалится либо добавится, дословно так: во всем ограничивающем контейнере все блочные элементы первого уровня сдвигаются вниз на 35px */
@@ -222,7 +260,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin: -10px 0;
-  /* display: inline-flex; В общем, это означает то, что если элементы потомки не слишком велики, то два контейнера с display: inline-flex могут идти бок о бок в одной строке. */
+  /* display: inline-flex; значение при котором все flex элементы занимают в блоке те значения которые прописаны flex элементам и блок flex не занимает всю ширину строки */
 }
 
 .main-block__button {
@@ -244,6 +282,7 @@ body {
 @media (max-width: 479px) {
   .main-block__button {
     flex: 1 1 100%;
+    /* короткая запись размеров flex элементов где первая цифра это значение flex-grow: 1; позволяет увеличиваться флекс элементу всю ширину flex контейнера не зависимо он значения flex-basis, вторая цифра это значение flex-shrink: 1; данное значение позволяет flex элементу пропорционально уменьшатся в зависимости он ширины экрана не зависимо от значения flex-basis, и последня цифра это значение flex-basis оно и указывает размеры всего flex блока, указывается в %, px, em, rem */
   }
 }
 
@@ -286,10 +325,10 @@ body {
 /* ----------------------------блок main---------------------------- */
 
 .services {
+  background: #fafafa;
 }
 .services__container {
 }
-
 
 @media (min-width: 670px) {
   .services__body {
@@ -369,5 +408,85 @@ body {
 }
 
 /* ----------------------------блок services---------------------------- */
+
+.advantages {
+  padding: 80px 0;
+  background: #fafafa;
+
+}
+
+@media (max-width: 998px) {
+  .advantages {
+    padding: 50px 0;
+    background: #fafafa;
+  }
+
+}
+.advantages__container {
+}
+
+.advantages__header {
+  margin-bottom: 50px;
+  /* для элемента блока можно задавать отступы и его можно использовать как модификатор, для блока нельзя иначе контент поплывет */
+}
+
+.advantages__body {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px -15px -30px;
+}
+.advantages__column {
+  padding: 0px 15px;
+  margin-bottom: 30px;
+  flex: 0 1 25%;
+}
+
+@media (max-width: 1035px) {
+  .advantages__column {
+    
+    flex: 0 1 50%;
+  }
+}
+
+@media (max-width: 560px) {
+  .advantages__column {
+    
+    flex: 0 1 100%;
+  }
+  
+}
+
+.advantages__item {
+  background-color: #fafafa;
+  padding: 30px 40px;
+  text-align: center;
+  
+}
+
+.advantages__icon {
+  height: 48px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  /* для того чтоб выравнить иконки разной величины и привести их в одно состояниие выполняю вот такой лайвхак, прибиваю все эконки к нижней линии и визуально они становятся приятнее */
+}
+
+.advantages__title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: calc(57 / 40 * 100%);
+  letter-spacing: 0.2px;
+  color: #252b42;
+}
+
+.advantages__text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(24 / 16 * 100%);
+  letter-spacing: 0.1px;
+  color: #737373;
+}
+
+/* ----------------------------блок advantages---------------------------- */
 
 /* ----------------------------блок footer---------------------------- */
