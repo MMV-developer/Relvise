@@ -141,6 +141,10 @@ body {
   /* желательно высоты прописывать в процентах, так лучше при адаптиве */
 }
 
+.menu__link:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 479px) {
   .menu__link {
     font-size: 18px;
@@ -187,6 +191,9 @@ body {
 
 .page__getintouch {
   background-color: #fafafa;
+}
+
+.page__contact {
 }
 .header-block {
   text-align: center;
@@ -309,6 +316,9 @@ body {
   /* кнопка сделанная таким образом при добавлении контента будет автоматически увеличиватся пропорционально */
 }
 
+
+
+
 @media (max-width: 479px) {
   .main-block__button {
     flex: 1 1 100%;
@@ -317,8 +327,8 @@ body {
 }
 
 @media (min-width: 479px) {
-  .main-block__button:last-child {
-    margin-left: 10px;
+  .main-block__button:first-child {
+    margin-right: 10px;
   }
 }
 
@@ -326,10 +336,24 @@ body {
   background: #ff7b47;
   color: #ffffff;
 }
+.main-block__button_orange:hover {
+  background: #ffffff;
+  color: #ff7b47;
+  border: #ff7b47 solid 1px;
+  transition: all 0.3s ease 0s;
+  
+}
 .main-block__button_border {
   border: 1px solid #0d5c63;
   color: #0d5c63;
 }
+
+.main-block__button_border:hover {
+background: #0d5c63;
+color: #ffffff;
+transition: all 0.3s ease 0s;
+}
+
 
 .main-block__img {
   position: absolute;
@@ -916,6 +940,12 @@ body {
   /* крутая реализация кнопки */
 }
 
+.subscribe__button:hover {
+  transition: all 0.3s ease 0s; 
+  cursor: pointer;
+  background: #ba491d
+}
+
 @media (max-width: 810px) {
   .subscribe__button {
     padding: 0px 15px;
@@ -927,7 +957,7 @@ body {
 /* ----------------------------блок subscribe---------------------------- */
 
 .getintouch {
-  padding: 80px 0px 135px 0px;
+  padding: 80px 0px 150px 0px;
 }
 .getintouch__container {
 }
@@ -940,24 +970,20 @@ body {
   margin: 0 -15px;
 }
 
-
-@media(min-width: 992px){
+@media (min-width: 992px) {
   .getintouch__items {
     display: flex;
     align-items: center;
     margin: 0;
   }
- /* супер фишка если на маленьком экране тебе нужно быстро адаптировать блок, тупо убирай flex в min-width!!! Это гениально  */
+  /* супер фишка если на маленьком экране тебе нужно быстро адаптировать блок, тупо убирай flex в min-width!!! Это гениально  */
 }
 
 @media (max-width: 992px) {
-.getintouch__header {
-  margin: 20px 0px 30px 0px;
+  .getintouch__header {
+    margin: 20px 0px 30px 0px;
+  }
 }
-  
-}
-
-
 
 .getintouch__item {
   flex: 0 1 33.333%;
@@ -965,7 +991,7 @@ body {
 .item-getintouch {
   display: flex;
   flex-direction: column;
-  justify-content: center ;
+  justify-content: center;
   align-items: center;
   background-color: #ffffff;
   padding: 50px 15px;
@@ -982,8 +1008,7 @@ body {
 }
 .item-getintouch_last > * {
   margin: 0px 0px 10px 0px;
-} 
-
+}
 
 .item-getintouch_active:last-child > * {
   margin: 0px 0px 10px 0px;
@@ -1044,5 +1069,228 @@ body {
 }
 
 /* ----------------------------блок getintouch---------------------------- */
+
+.contact {
+  background-color: #ffffff;
+  padding: 40px 0;
+}
+
+.contact__content {
+  padding: 0px 0px 20px 0px;
+  /* чтоб при отзывчивости не было прилипания к другому блоку, ставь padding безопастности */
+}
+
+@media (min-width: 768px) {
+  .contact__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .contact__content {
+    padding: 0px 20px 0px 0px;
+  }
+}
+
+.contact__title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 133%;
+  letter-spacing: 0.1px;
+  color: #252b42;
+}
+
+.contact__title {
+  margin: 0px 0px 10px 0px;
+}
+
+.contact__text {
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  line-height: 142%;
+  color: #737373;
+}
+.contact__button {
+  display: flex;
+  background: #ff7b47;
+  min-height: 58px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #ff7b47;
+  border-radius: 5px;
+  padding: 5px 40px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 200%;
+  color: #ffffff;
+  transition: all 0.3s ease 0s;
+}
+.contact__button:hover {
+  background-color: #ffffff;
+  color: #ff7b47;
+}
+
+/* ----------------------------блок contact---------------------------- */
+
+.footer {
+}
+.footer__top {
+  background: #17213c;
+  padding: 30px 0;
+}
+.footer__main {
+}
+
+.footer__row {
+  display: flex;
+  margin: 0 -15px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__column {
+  flex: 0 1 16.6667%;
+  padding: 15px;
+}
+
+.footer__column:last-child {
+  flex: 0 1 33.334%;
+}
+
+@media (max-width: 992px) {
+  .footer__column {
+    flex: 0 1 25%;
+  }
+  .footer__column:last-child {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer__column {
+    flex: 0 1 50%;
+  }
+
+  .footer__label {
+    margin: 0px 0px 20px 0px;
+  }
+}
+.footer__label {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 15%;
+  margin: 0px 0px 30px 0px;
+}
+.footer__menu {
+}
+
+.menu-footer {
+}
+.menu-footer__list {
+}
+.menu-footer__item {
+  margin: 0px 0px 10px 0px;
+}
+
+.menu-footer__item:last-child {
+  margin: 0px 0px 0px 0px;
+}
+
+.menu-footer__link {
+  letter-spacing: 0.2px;
+  font-weight: 600;
+  line-height: 171%;
+  font-size: 14px;
+  color: #ffffff;
+  display: inline-block;
+  /* для ссылок  line-height не сработает без display: inline-block; */
+}
+
+.menu-footer__link:hover {
+  text-decoration: underline;
+}
+
+.footer__contacts {
+}
+.contacts-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-footer__item {
+  margin: 0px 0px 12px 0px;
+  padding: 0px 0px 0px 34px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  min-height: 34px;
+  line-height: 142%;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.contacts-footer__item:hover {
+  text-decoration: underline;
+}
+
+.contacts-footer__item:last-child {
+  margin: 0px 0px 0px 0px;
+}
+
+.contacts-footer__item_home {
+  background: url(/img/footer/1.svg) left no-repeat;
+}
+.contacts-footer__item_map {
+  background: url(/img/footer/2.svg) left no-repeat;
+}
+.contacts-footer__item_email {
+  background: url(/img/footer/3.svg) left no-repeat;
+}
+
+.footer__bottom {
+  padding: 25px 0;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .footer__container {
+    flex-direction: column;
+  }
+  .footer__copy {
+    padding: 0px 0px 15px 0px;
+    text-align: center;
+  }
+  
+}
+
+.footer__copy {
+  
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 171%;
+  letter-spacing: 0.2px;
+  color: #737373;
+}
+.footer__social {
+}
+.social {
+  display: flex;
+  align-items: center;
+}
+.social__item {
+  padding: 0px 0px 0px 20px;
+}
+
+.social__item:first-child {
+  padding: 0px 0px 0px 0px;
+}
 
 /* ----------------------------блок footer---------------------------- */
